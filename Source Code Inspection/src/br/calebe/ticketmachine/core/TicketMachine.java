@@ -31,7 +31,7 @@ public class TicketMachine {
             }
         }
         if (!achou) {
-            throw new PapelMoedaInvalidaException();
+            throw new PapelMoedaInvalidaException("Cédula inválida: " + quantia);
         }
         this.saldo += quantia;
     }
