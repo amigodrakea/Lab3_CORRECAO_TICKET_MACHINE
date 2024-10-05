@@ -40,8 +40,15 @@ public class TicketMachine {
         return saldo;
     }
 
+     // Método para calcular e devolver o troco
     public Iterator<Integer> getTroco() {
-        return null;
+        if (saldo == 0) {
+            return null;  // Nenhum troco disponível
+        }
+
+        Troco troco = new Troco(saldo);  // Calcula o troco com base no saldo
+        saldo = 0;  // Zera o saldo após calcular o troco
+        return troco.getCédulas();  // Devolve o troco
     }
 
     public int getValorBilhete() {
