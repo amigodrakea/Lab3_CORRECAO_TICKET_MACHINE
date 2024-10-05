@@ -15,6 +15,9 @@ public class TicketMachine {
     protected int[] papelMoeda = {2, 5, 10, 20, 50, 100};
 
     public TicketMachine(int valor) {
+        if (valor <= 0) {
+            throw new IllegalArgumentException("O valor do bilhete deve ser positivo.");
+        }
         this.valor = valor;
         this.saldo = 0;
     }
