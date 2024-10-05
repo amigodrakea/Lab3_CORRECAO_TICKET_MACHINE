@@ -44,6 +44,10 @@ public class TicketMachine {
         return null;
     }
 
+    public int getValorBilhete() {
+        return valor;
+    }
+
     public String imprimir() throws SaldoInsuficienteException {
         if (saldo < valor) {
             throw new SaldoInsuficienteException();
